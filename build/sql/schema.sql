@@ -1,0 +1,6 @@
+DROP DATABASE IF EXISTS srb;
+
+CREATE DATABASE srb;
+
+USE srb;
+
