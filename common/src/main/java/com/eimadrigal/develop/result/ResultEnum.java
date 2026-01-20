@@ -8,7 +8,14 @@ import lombok.Getter;
 public enum ResultEnum {
 
     SUCCESS(0, "Success"),
-    ERROR(-1, "Internal server error");
+    ERROR(-1, "Internal server error"),
+
+    // 1xx server error
+    BAD_SQL_GRAMMAR_ERROR(101, "Bad SQL grammar"),
+
+    // 2xx param validation
+    BORROW_AMOUNT_ERROR(201, "Borrow amount cannot be negative"),
+    ;
 
     private final Integer code;
 

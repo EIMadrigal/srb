@@ -1,7 +1,9 @@
 package com.eimadrigal.develop.controller.admin;
 
 import com.eimadrigal.develop.entity.PointLevel;
+import com.eimadrigal.develop.exception.SrbException;
 import com.eimadrigal.develop.result.Result;
+import com.eimadrigal.develop.result.ResultEnum;
 import com.eimadrigal.develop.service.PointLevelService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,6 +35,9 @@ public class AdminPointLevelController {
 
     @PostMapping("/save")
     public Result save(@RequestBody PointLevel pointLevel) {
+        if (pointLevel.getBorrowAmount() == null) {
+            throw new SrbException(ResultEnum.BORROW_AMOUNT_ERROR);
+        }
         boolean saveRes = pointLevelService.save(pointLevel);
         return saveRes ? Result.ok() : Result.error();
     }

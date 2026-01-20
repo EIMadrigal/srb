@@ -37,4 +37,11 @@ public class Result<T> {
     public static <T> Result<T> error() {
         return error(ResultEnum.ERROR);
     }
+
+    public static <T> Result<T> error(Integer code, String message) {
+        Result<T> result = new Result<>();
+        result.setCode(code);
+        result.setMessage(message);
+        return result;
+    }
 }
