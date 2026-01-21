@@ -21,3 +21,6 @@ build/docker/
 .idea/
 
 .DS_Store
+
+log/
+*.log

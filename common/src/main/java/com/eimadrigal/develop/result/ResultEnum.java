@@ -12,6 +12,7 @@ public enum ResultEnum {
 
     // 1xx server error
     BAD_SQL_GRAMMAR_ERROR(101, "Bad SQL grammar"),
+    SERVLET_ERROR(102, "Servlet request error"),
 
     // 2xx param validation
     BORROW_AMOUNT_ERROR(201, "Borrow amount cannot be negative"),
